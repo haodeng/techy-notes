@@ -15,8 +15,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 
-public class FunctionalInterfaceTest
-{
+public class FunctionalInterfaceTest {
     @Test
     public void consumer() {
         List strings = Arrays.asList("one", "two", "three");
@@ -34,7 +33,7 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        Consumer consumer = (v) -> result.add(((String)v).toUpperCase());
+        Consumer<String> consumer = (v) -> result.add(v.toUpperCase());
 
         consumer.accept("zero");
         Assert.assertEquals(Arrays.asList("ZERO"), result);
@@ -55,7 +54,7 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        Predicate evenPredicate = (v) -> (Integer)v % 2 == 0;
+        Predicate<Integer> evenPredicate = (v) -> v % 2 == 0;
 
         Assert.assertTrue(evenPredicate.test(2));
         Assert.assertFalse(evenPredicate.test(1));
@@ -80,7 +79,7 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        Predicate oddPredicate = (v) -> (Integer)v % 2 == 1;
+        Predicate<Integer> oddPredicate = (v) -> v % 2 == 1;
         Assert.assertFalse(oddPredicate.test(2));
         Assert.assertTrue(oddPredicate.test(1));
         List odds = (List) numbers.stream().filter(oddPredicate).collect(Collectors.toList());
@@ -101,7 +100,8 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        Function toUppercase = (s) -> ((String)s).toUpperCase();
+//        Function toUppercase = (Function<String, String>)(s) -> (s).toUpperCase();
+        Function<String, String> toUppercase = String::toUpperCase;
 
         Assert.assertEquals("UPPERCASE", toUppercase.apply("uppercase"));
         List<String> lowercase = Arrays.asList("a", "b", "c", "d");
@@ -120,7 +120,8 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        Supplier supplier = () -> new CopyOnWriteArrayList<String>();
+//        Supplier<List<String>> supplier = () -> new CopyOnWriteArrayList<String>();
+        Supplier<List<String>> supplier = CopyOnWriteArrayList<String>::new;
         Assert.assertEquals(new CopyOnWriteArrayList<>(), supplier.get());
         Assert.assertNotSame(supplier.get(), supplier.get());
         List<String> list = (List<String>)Stream.of("1", "2", "3").collect(Collectors.toCollection(supplier));
@@ -140,7 +141,9 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        BiConsumer biConsumer = (k, v) -> result.put(((String)k).toUpperCase(), ((String)v).toUpperCase());
+//        BiConsumer biConsumer = (BiConsumer<String, String>)(k, v) -> result.put(k.toUpperCase(), v.toUpperCase());
+
+        BiConsumer<String, String> biConsumer = (k, v) -> result.put(k.toUpperCase(), v.toUpperCase());
         biConsumer.accept("a", "one");
 
         Assert.assertEquals(
@@ -177,7 +180,7 @@ public class FunctionalInterfaceTest
 //            }
 //        };
 
-        UnaryOperator squared = (v) -> ((Integer)v) * ((Integer)v);
+        UnaryOperator squared = (UnaryOperator<Integer>)(v) -> v * v;
 
         Assert.assertEquals(Integer.valueOf(4), squared.apply(2));
         Assert.assertEquals(Integer.valueOf(9), squared.apply(3));
