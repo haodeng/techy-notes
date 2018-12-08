@@ -11,8 +11,13 @@ git checkout new_branch
 
 git checkout master
 
+# Rebase
+Interactive rebase -i
+
 git rebase -i new_branch
 
 git rebase --skip
 
 git rebase --continue
+
+git rebase --abort
