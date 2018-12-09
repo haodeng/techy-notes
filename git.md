@@ -14,10 +14,21 @@ git checkout master
 # Rebase
 Interactive rebase -i
 
-git rebase -i new_branch
+git checkout new_branch
+
+git rebase -i master        # rebase new_branch onto master
 
 git rebase --skip
 
 git rebase --continue
 
 git rebase --abort
+
+git checkout master
+
+git merge new_branch     # merge rebeased commit back to master
+
+
+Rebase can give a clean commit history, but rebase on remote repository may dangerous.
+Merge is safe, but commit history remains.
+
