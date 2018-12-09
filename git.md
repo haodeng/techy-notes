@@ -41,6 +41,16 @@ git rebase --continue
 git rebase --abort
 
 
+A typical rebase process is:
+```python
+git checkout branch
+git rebease -i master
+git checkout master
+git merge branch
+```
+
+
+
 # Merge
 
 git checkout master
