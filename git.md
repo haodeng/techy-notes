@@ -24,11 +24,15 @@ git rebase --continue
 
 git rebase --abort
 
+
+# Merge
+
 git checkout master
 
-git merge new_branch     # merge rebeased commit back to master
+git merge new_branch     
 
 
 Rebase can give a clean commit history, but rebase on remote repository may dangerous.
+
 Merge is safe, but commit history remains.
 
