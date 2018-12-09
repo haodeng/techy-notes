@@ -1,15 +1,31 @@
 git init
 
 git clone -b <branch> https://.../...git
+  
+git log
+
+git diff
 
 
-git branch
+# Branch
+git branch      # show all branches and the current branch
 
-git branch new_branch
+git branch new_branch         # create a new branch
 
-git checkout new_branch
+git checkout new_branch        # switch to new branch
 
-git checkout master
+git checkout -b new_branch       #Equal to branch new_branch and checkout new_branch
+
+git branch -d new_branch       # delete a branch
+
+git branch -m new_branch_name    # move a branch to new name
+
+
+
+# Fetch and pull
+pull is doing a fetch and followed by a git merge. 
+Fetch is only get changes to the local repository from remote, no merge is triggered.
+
 
 # Rebase
 Interactive rebase -i
