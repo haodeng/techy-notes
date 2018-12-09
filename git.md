@@ -62,3 +62,16 @@ Rebase can give a clean commit history, but rebase on remote repository may dang
 
 Merge is safe, but commit history remains.
 
+
+
+# Alias
+git config --global alias.co "checkout"
+
+git config --global alias.st "status"
+
+git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+
+
+List all alias.
+git config --global alias.alias "config --get-regexp ^alias\."
+
