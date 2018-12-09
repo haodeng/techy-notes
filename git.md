@@ -73,5 +73,6 @@ git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --grap
 
 
 List all alias.
+
 git config --global alias.alias "config --get-regexp ^alias\."
 
