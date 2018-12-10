@@ -76,3 +76,11 @@ List all alias.
 
 git config --global alias.alias "config --get-regexp ^alias\."
 
+
+# Others
+git commit -a -m "commit message" 
+
+git commit --amend -m "correct last message"
+
+Amend can only change the commit message on local repository. 
+
