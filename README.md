@@ -8,3 +8,6 @@ src/test/java/functional
 src/main/java/lombok/
 
 src/test/java/lombok
+
+### Git command
+git.md
