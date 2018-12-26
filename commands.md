@@ -50,3 +50,8 @@ Add headers, take the local file example.xml and send to server.
 curl -w "Type: %{content_type}\nCode: %{response_code}\n" http://example.com
 </pre>
 Write out the response
+
+<pre>
+curl -H "Authorization: Basic dGVzdDE6dGVzdDI=" "http://example.com/web/test/status?reference=400003A13C0671607251525040&status=delivered"
+</pre>
+Authorization
