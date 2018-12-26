@@ -14,4 +14,7 @@ Forward connections from your local port 9000 to localhost:5432 on your server.
 <pre>
 ssh-keygen
 </pre>
-to create a key-pair. public key can be shared.
+<pre>
+ssh-keygen -t rsa
+</pre>
+to create a key-pair. public key can be shared. By default the key type is rsa.
