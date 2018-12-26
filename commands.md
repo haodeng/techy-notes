@@ -18,3 +18,21 @@ ssh-keygen
 ssh-keygen -t rsa
 </pre>
 to create a key-pair. public key can be shared. By default the key type is rsa.
+
+
+## Curl
+<pre>
+curl www.google.dk 
+curl --u user:password http://example.org/
+</pre>
+
+<pre>
+curl --data "birthyear=1905&press=%20OK%20"  http://www.example.com/when.cgi
+
+curl --data-urlencode "name=Hao Deng" http://www.example.com
+</pre>
+
+<pre>
+curl -w "\n" --header "Content-Type: text/xml;charset=UTF-8" http://www.example.com --data @example.xml
+</pre>
+Add headers, take the local file example.xml and send to server.
