@@ -23,8 +23,18 @@ to create a key-pair. public key can be shared. By default the key type is rsa.
 ## Curl
 <pre>
 curl www.google.dk 
-curl --u user:password http://example.org/
+curl -u user:password http://example.org/
 </pre>
+
+<pre>
+curl -o output.html http://example.com/
+</pre>
+Output the response to output.html
+
+<pre
+curl --max-time 5.5 https://example.com/
+</pre>
+Timeout 5500 milis
 
 <pre>
 curl --data "birthyear=1905&press=%20OK%20"  http://www.example.com/when.cgi
@@ -36,3 +46,8 @@ curl --data-urlencode "name=Hao Deng" http://www.example.com
 curl -w "\n" --header "Content-Type: text/xml;charset=UTF-8" http://www.example.com --data @example.xml
 </pre>
 Add headers, take the local file example.xml and send to server.
+
+<pre>
+curl -w "Type: %{content_type}\nCode: %{response_code}\n" http://example.com
+</pre>
+Write out the response
