@@ -31,14 +31,13 @@ curl -o output.html http://example.com/
 </pre>
 Output the response to output.html
 
-<pre
+<pre>
 curl --max-time 5.5 https://example.com/
 </pre>
 Timeout 5500 milis
 
 <pre>
 curl --data "birthyear=1905&press=%20OK%20"  http://www.example.com/when.cgi
-
 curl --data-urlencode "name=Hao Deng" http://www.example.com
 </pre>
 
