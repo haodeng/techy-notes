@@ -1,3 +1,5 @@
+
+<pre>
 git init
 
 git clone -b <branch> https://.../...git
@@ -5,6 +7,7 @@ git clone -b <branch> https://.../...git
 git log
 
 git diff
+</pre>
 
 
 # Branch
