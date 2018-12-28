@@ -2,7 +2,7 @@
 <pre>
 git init
 
-git clone -b <branch> https://.../...git
+git clone -b branch_name https://.../...git
   
 git log
 
