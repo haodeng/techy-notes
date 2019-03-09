@@ -98,7 +98,7 @@ git reflog
 
 
 # Go to commit
-git reset --hard <hash>
+git reset --hard hash
   
-  Head index will move to <hash>
+  Head index will move to hash
 
