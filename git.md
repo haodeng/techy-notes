@@ -87,3 +87,12 @@ git commit --amend -m "correct last message"
 
 Amend can only change the commit message on local repository. 
 
+# Log
+git log
+
+git log --pretty=oneline
+
+git log --oneline
+
+git reflog
+
