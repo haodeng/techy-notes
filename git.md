@@ -127,3 +127,20 @@ reset index file, but not the working tree. 本地库移动HEAD指针，Staging�
 --hard
 reset the index and working tree 本地库移动HEAD指针，Staging与WorkSpace都重置
 
+
+# diff
+git diff
+
+compare local to staging
+
+git diff HEAD
+
+compare local to latest in workspace
+
+git diff HEAD^
+
+etc
+
+git diff a.txt
+
+only compare one file.
