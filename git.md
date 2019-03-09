@@ -114,3 +114,16 @@ git reset --hard HEAD~3
 
 use ^ and ~ can only move back, use hash can go both direction. Recommend to use hash.
 
+
+Mode
+
+--soft
+
+only move the head to the commit, does not touch index file and working tree. 本地库移动HEAD指针，Staging与WorkSpace不变
+
+--mixed
+reset index file, but not the working tree. 本地库移动HEAD指针，Staging重置，WorkSpace不变
+
+--hard
+reset the index and working tree 本地库移动HEAD指针，Staging与WorkSpace都重置
+
