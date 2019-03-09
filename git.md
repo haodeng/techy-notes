@@ -154,3 +154,7 @@ set remote repository https://----/.git as origin
 git remote -v
 
 view remote repository.
+
+git push origin master
+
+push local change to remote repository (origin) master branch.
