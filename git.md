@@ -97,8 +97,16 @@ git log --oneline
 git reflog
 
 
-# Go to commit
+# Go to revision
 git reset --hard hash
   
   Head index will move to hash
+
+git reset --hard HEAD^
+
+move index from HEAD one step back.
+
+git reset --hard HEAD^^^
+
+move index from HEAD 3 steps back
 
