@@ -144,3 +144,13 @@ etc
 git diff a.txt
 
 only compare one file.
+
+# remote
+
+git remote add origin https://---/.git 
+
+set remote repository https://----/.git as origin
+
+git remote -v
+
+view remote repository.
