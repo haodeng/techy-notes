@@ -100,7 +100,7 @@ git reflog
 # Go to revision
 git reset --hard hash
   
-  Head index will move to hash
+  Head index will move to hash, recommend to use hash to move back and forth.
 
 git reset --hard HEAD^
 
@@ -108,5 +108,9 @@ move index from HEAD one step back.
 
 git reset --hard HEAD^^^
 
-move index from HEAD 3 steps back
+move index from HEAD 3 steps back, this is equals to:
+
+git reset --hard HEAD~3
+
+use ^ and ~ can only move back, use hash can go both direction. Recommend to use hash.
 
