@@ -47,6 +47,8 @@ useradd -g testgroup test, add test user and put him under testgroup group. test
 
 usermod -g testgroup2 test, put test user to testgroup2
 
+## user, group files
+
 /etc/passwd, user info is here. One line per user, 
 format, username:x (hiden pass):userid:groupid::home dir:login shell
 
