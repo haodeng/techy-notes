@@ -19,3 +19,7 @@ useradd -d /home/guests test2, create test2 user and put it under /home/guest di
 
 passwd test, set password to user test. 
 
+userdel test, delete the test user, but /home/test dir remains.
+
+userdel -r test, delete the test user and /home/test dir.
+
