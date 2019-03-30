@@ -29,7 +29,24 @@ userdel -r test, delete the test user and /home/test dir.
 
 ## check user info
 
-id test, show test user uid, gid and groups.
+id test, show test user uid, gid and group name.
+
+## switch user
+
+su - test, switch to test user. If switch from root to test, no password requires. Type exit to back to current user.
+
+whoami, check what my current user is
+
+# Group
+
+groupadd test, add test group
+
+groupdel test, delete test group
+
+useradd -g testgroup test, add test user and put him under testgroup group. testgroup must exit.
+
+usermod -g testgroup2 test, put test user to testgroup2
+
 
 
 
