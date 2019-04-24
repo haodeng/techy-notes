@@ -67,4 +67,5 @@ format, username:encoded pass
 4: 保留
 5: 图形界面
 6: 重启
+
 配置文件 /etc/inittab
