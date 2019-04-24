@@ -58,7 +58,7 @@ format, group name:x (hiden pass):groupid:users in the group (not able to view n
 /etc/shadow, user password info, encoded.
 format, username:encoded pass
 
-## 指定系统运行级别
+## 指定系统运行级别, runlevel
 
 0: 关机
 1: 单用户（找回丢失密码）
@@ -68,4 +68,24 @@ format, username:encoded pass
 5: 图形界面
 6: 重启
 
-配置文件 /etc/inittab
+配置文件 /etc/inittab, modify the number in id:5:initdefault:
+
+switch to a level, eg level 3:
+
+init 3
+
+init 0  # also can shutdown
+
+## Find root password
+
+Swtich to single user runlevel, then modify root password. In single user mode, root user don't need pass to login.
+
+1. Shutdown and start the server
+
+2. press enter when it is still booting, press e then. Try to enter single user mode by enter 1 in the end.
+
+3. Press b to boot the server and enter single user mode. root user 
+
+4. passwd root # change root pass
+
+5. reboot
