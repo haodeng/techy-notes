@@ -58,3 +58,13 @@ format, group name:x (hiden pass):groupid:users in the group (not able to view n
 /etc/shadow, user password info, encoded.
 format, username:encoded pass
 
+## 指定系统运行级别
+
+0: 关机
+1: 单用户（找回丢失密码）
+2: 多用户无网络
+3: 多用户有网络
+4: 保留
+5: 图形界面
+6: 重启
+配置文件 /etc/inittab
