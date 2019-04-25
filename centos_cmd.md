@@ -101,3 +101,9 @@ rm -rf test  # -r recusive, -f by force, no promot.
 touch a1 a2 # create multiple files
 
 cp -r test test2  #copy dir test to test2. if test2 exists, copy test to test2/test 
+
+mv test.txt test/ #move test.txt to test dir
+
+mv test.txt test2.txt # rename test.txt to test2.txt
+
+less test.log, Ctrl+B page down, Ctrl+F page up. / search downwards, n search downwards, N search upwards
