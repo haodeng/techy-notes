@@ -89,3 +89,15 @@ Swtich to single user runlevel, then modify root password. In single user mode, 
 4. passwd root # change root pass
 
 5. reboot
+
+## Command
+
+mkdir -p /test/foo/bar
+
+rmdir test   # not able to rm a non empty dir
+
+rm -rf test  # -r recusive, -f by force, no promot.
+
+touch a1 a2 # create multiple files
+
+cp -r test test2  #copy dir test to test2. if test2 exists, copy test to test2/test 
