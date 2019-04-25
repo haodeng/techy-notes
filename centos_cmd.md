@@ -107,3 +107,9 @@ mv test.txt test/ #move test.txt to test dir
 mv test.txt test2.txt # rename test.txt to test2.txt
 
 less test.log, Ctrl+B page down, Ctrl+F page up. / search downwards, n search downwards, N search upwards
+
+cat /etc/profile >> 1.txt # append profile to 1.txt
+
+echo "hello w" >> 1.txt # append hello w to 1.txt
+
+cal # show calendar
