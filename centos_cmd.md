@@ -113,3 +113,15 @@ cat /etc/profile >> 1.txt # append profile to 1.txt
 echo "hello w" >> 1.txt # append hello w to 1.txt
 
 cal # show calendar
+
+echo $PATH  # print out PATH env var
+
+head file.txt  # print out first 10 lines of the file, defualt is 10.
+
+head -n 5 file.txt # print out first 5 lines of the file
+
+tail file.txt # print out last 10 lines
+
+tail -n 5 file.txt  #print out last 5 lines
+
+tail -f file.txt # follow the file changes
