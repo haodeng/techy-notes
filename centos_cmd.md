@@ -125,3 +125,14 @@ tail file.txt # print out last 10 lines
 tail -n 5 file.txt  #print out last 5 lines
 
 tail -f file.txt # follow the file changes
+
+
+## Command 2
+
+ln -s file file.ln  # soft link file to file.ln
+
+history # show all history
+
+history 10 # show latest 10 history
+
+!33 # execute history cmd 33.
