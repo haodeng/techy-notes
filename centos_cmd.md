@@ -148,3 +148,14 @@ date -s "2019-05-06 11:11:11"  # set sys date to "2019-05-06 11:11:11" by String
 cal # print calendar of current month
 
 cal 2019 # print calendar of 2019
+
+## Find files
+
+find /home -name test.txt  # find file by name test.txt under /home
+
+find . -user user1  # find all files which owner is user1 under .
+
+find  / -size +20M #find all files larger than 20MB,  +n great then, -n less than, n equal to
+
+grep -n test test.txt  # search test in test.txt, and show the line number,  -i ignore case
+
