@@ -136,3 +136,15 @@ history # show all history
 history 10 # show latest 10 history
 
 !33 # execute history cmd 33.
+
+date # show current date
+
+date +%Y  #show current year
+
+date "+%Y-%m-%d %H:%M:%S"  # show date in defined format yyyy-mm-dd HH24:MI:SS
+
+date -s "2019-05-06 11:11:11"  # set sys date to "2019-05-06 11:11:11" by String
+
+cal # print calendar of current month
+
+cal 2019 # print calendar of 2019
