@@ -203,3 +203,36 @@ chmod o+w test.txt  # add w to other
 chmod a-x text.txt  # revoke x from all 
 
 chmod 751 text.txt # -rwx-rx-x, 777 = -rwxrwxrwx, 644 = -rw-r--r--
+
+
+## cron job
+
+cron syntax: first * = minute (0 - 59), 
+
+second * =  hour (0 -23), 
+
+third * = day (1-31), 
+
+fouth * = month (1 - 12), 
+
+fifth * = day in a week (0 - 7, 0 and 7 are both for Sunday)
+
+45 22 * * * ls -l /etc >> tmp/text.txt # run cmd at 22:45
+
+0 17 * * 1 ls -l /etc >> tmp/text.txt # run cmd at 17:00 on Monday
+
+*/1 * * * * ls -l /etc >> tmp/text.txt  # run cmd every 1 minute
+
+*/10 4 * * * ls -l /etc >> tmp/text.txt # run cmd every 10 minutes at 4:00, stop at 5:00
+
+0 8,12,16 * * *  ls -l /etc >> tmp/text.txt  # run cmd at 8:00, 12:00 and 16:00
+
+0 5 * * 1-6 ls -l /etc >> tmp/text.txt # run cmd Monday to Saturday at 5:00
+
+crontab -e  # edit cron job
+
+crontab -l # list cron jobs
+
+crontab -r  # remove all cron jobs, remove single job can use -e edit
+
+service crond restart  # restart crond 
