@@ -172,3 +172,14 @@ tar -zcvf test.tar.gz test  # tar and gzip test
 tar -zxvf test.tar.gz  # unzip and extract test.tar.gz to current dir
 
 tar -zxvf test.tar.gz -C test2  #unzip and extract test.tar.gz to test2 dir, test2 should be exist.
+
+
+## user, group and rights
+
+groupadd test  # add group test
+
+useradd -g test tom  # create user tom and put it to test group
+
+passed tom # set password for user tom
+
+chown tom text.txt # change text.txt own to tom
