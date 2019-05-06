@@ -183,3 +183,23 @@ useradd -g test tom  # create user tom and put it to test group
 passed tom # set password for user tom
 
 chown tom text.txt # change text.txt own to tom
+
+chown tom:test text.txt # change owner to tom and group tp test, use -R change dir recursively
+
+chgrp test text.txt # change text.text to group test, use -R change dir recursively
+
+id tom  # show user tom's user, group info
+
+usermod -g test tom  # change tom to group test
+
+usermod -d /home/tom2 tom  # change tom's login dir to tom2
+
+rights -rwx , r=4 (100), w=2 (010), x=1 (001), rwx = 4+2+1=7, or 111 = 7 
+
+chmod u=rwx,g=rx,o=x test.txt  # u:owner, g=group, o = otherm a = all (u, g, o)
+
+chmod o+w test.txt  # add w to other
+
+chmod a-x text.txt  # revoke x from all 
+
+chmod 751 text.txt # -rwx-rx-x, 777 = -rwxrwxrwx, 644 = -rw-r--r--
