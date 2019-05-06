@@ -159,3 +159,16 @@ find  / -size +20M #find all files larger than 20MB,  +n great then, -n less tha
 
 grep -n test test.txt  # search test in test.txt, and show the line number,  -i ignore case
 
+## Zip unzip
+
+gzip file.txt # zip file.txt to file.txt.gz, file.txt will not be saved
+
+gunzip file.txt.zip  # unzip file.txt.gz to file.txt
+
+tar -cvf test.tar test  # create test.tar from test
+ 
+tar -zcvf test.tar.gz test  # tar and gzip test
+
+tar -zxvf test.tar.gz  # unzip and extract test.tar.gz to current dir
+
+tar -zxvf test.tar.gz -C test2  #unzip and extract test.tar.gz to test2 dir, test2 should be exist.
