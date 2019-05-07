@@ -259,3 +259,20 @@ How to add a disk?
 7. mount -a # mount all disks in fstab
 
 umount /home/newdisk or umount /dev/sdb1  # unmount sdb1
+
+
+df -lh  # report the disk usages
+
+du -h dir  # show usage of the dir,  -a includes file, -c sum
+
+du -ach --max-depth=1 dir
+
+Useful cmds
+
+ls -l /home |grep "^-" |wc -l  # count the number of files in /home, file starts with -, eg: -rw-r--r--
+
+ls -l /home | grep "^d" | wc -l # count the number of dirs in /home
+
+ls -lR /home |grep "^-" |wc -l  # count the number of files in /home including files in dir and subdir, -R is recursive
+
+tree /home # view /home in tree structure, if tree is not available, run: yum install tree
