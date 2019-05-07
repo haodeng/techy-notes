@@ -236,3 +236,26 @@ crontab -l # list cron jobs
 crontab -r  # remove all cron jobs, remove single job can use -e edit
 
 service crond restart  # restart crond 
+
+
+## Disk
+
+lsblk -f  # or lsblk, check block devices, 查看系统分区和挂载情况
+
+How to add a disk?
+
+1. Virual machine add a disk and restart, check with lsblk -f, sdb should be show
+
+2. fdisk /dev/sdb  # start partition the disk, then check with lsblk, sdb1 partition should be shown.
+
+3. mkfs -t ext4 /dev/sdb1  # format the sdb1 to ext4 type
+
+4. mkdir /home/newdisk  # create dir for mounting
+
+5. mount /dev/sdb1 /home/newdisk  #mount sdb1 to /home/newdisk, check with lsblk -f, mount point should be shown
+
+6. Not done yet, to auto mount when start up, we still need to vi /etc/fstab , add line: /dev/sdb1  /home/newdisk  ext4  defaults  0 0
+
+7. mount -a # mount all disks in fstab
+
+umount /home/newdisk or umount /dev/sdb1  # unmount sdb1
