@@ -276,3 +276,9 @@ ls -l /home | grep "^d" | wc -l # count the number of dirs in /home
 ls -lR /home |grep "^-" |wc -l  # count the number of files in /home including files in dir and subdir, -R is recursive
 
 tree /home # view /home in tree structure, if tree is not available, run: yum install tree
+
+## Network config
+
+ifconfig  # Equivalent to windows ipconfig
+
+ping www.google.dk  # ping
