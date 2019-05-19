@@ -286,3 +286,17 @@ ping www.google.dk  # ping
 vi /etc/sysconfig/network-scripts/ifcfg-eh0/ifcfg-eth0   # modify the static IP, eth0's config file. 1. Modify IPADDR, 2. change BOOTPROTO to static, 3. ONBOOT should be yes
 
 After modifing ifcfg-etho, restart servive is needed:  service network restart
+
+## Process
+
+ps # show processes, PID, TTY, TIME (cumulative CPU time), CMD
+
+ps -a  # show all processes of current terminal
+
+ps -u # show processes by user
+
+ps -x  # show backgound process
+
+ps -aux  # system V style
+
+ps -ef # BSD style, can view parent pid
