@@ -282,3 +282,7 @@ tree /home # view /home in tree structure, if tree is not available, run: yum in
 ifconfig  # Equivalent to windows ipconfig
 
 ping www.google.dk  # ping
+
+vi /etc/sysconfig/network-scripts/ifcfg-eh0/ifcfg-eth0   # modify the static IP, eth0's config file. 1. Modify IPADDR, 2. change BOOTPROTO to static, 3. ONBOOT should be yes
+
+After modifing ifcfg-etho, restart servive is needed:  service network restart
