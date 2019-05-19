@@ -300,3 +300,9 @@ ps -x  # show backgound process
 ps -aux  # system V style
 
 ps -ef # BSD style, can view parent pid
+
+kill <pid>  # kill a process by pid
+ 
+kill -9 <pid>  # kill by force
+ 
+ 
