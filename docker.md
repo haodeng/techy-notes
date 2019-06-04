@@ -16,5 +16,6 @@ docker restart mysql-server-5.6.44 # restart container
 
 docker rm mysql-server-5.6.44  # rm container by name
 
-docker run --name=mysql-server-5.6.44 -d -p 3306:3306 mysql/mysql-server:5.6.44  # -p port exposing. 
+docker run --name=mysql-server-5.6.44 -d -e MYSQL_ROOT_HOST=% -p 3306:3306 mysql/mysql-server:5.6.44  # -p port exposing, -e set env vars 
 
+docker logs mysql-server-5.6.44   # check the mysql starting logs
