@@ -8,7 +8,9 @@ docker ps # show the running containers
 
 docker stop mysql-server-5.6.44   # stop container by name mysql-server-5.6.44
 
-docker ps -f status=exited  # show stopped containersx
+docker ps -f status=exited  # show stopped containers
+
+docker ps -a # show all containers including these stopped
 
 docker start mysql-server-5.6.44 # start container again
 
