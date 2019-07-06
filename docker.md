@@ -20,6 +20,8 @@ docker rm mysql-server-5.6.44  # rm container by name
 
 docker run --name=mysql-server-5.6.44 -d -e MYSQL_ROOT_HOST=% -p 3306:3306 mysql/mysql-server:5.6.44  # -p port exposing, -e set env vars 
 
+docker run --name=mysql-server-4 -d --env-file /Users/dev/hao/setups/mysql-4.env -p 3307:3306 stevemayne/mysql4:latest  # with env file
+
 docker logs mysql-server-5.6.44   # check the mysql starting logs
 
 docker exec -it mysql-server-5.6.44 mysql -uroot -p  # get the temp pass by : docker logs mysql-server-5.6.44
@@ -27,5 +29,7 @@ docker exec -it mysql-server-5.6.44 mysql -uroot -p  # get the temp pass by : do
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('password');  # mysql 5.6 version, new versions use alter user
 
 grant all privileges on *.* to 'root'@'172.17.0.1' identified by 'xxx';
+
+or grant all privileges on *.* to 'root'@'%';  # check which one fits ur mysql version
 
 FLUSH PRIVILEGES;
