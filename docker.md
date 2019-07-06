@@ -38,3 +38,5 @@ FLUSH PRIVILEGES;
 docker exec -i container_name mysql -uroot dbname < data.sql;  # import data into a schema
 
 docker exec -i mysql-server-4 mysql --max_allowed_packet=800M -uroot -proot  test<test.sql  # define the max size of import sql file.
+
+set global max_allowed_packet=1000000000; # also in mysql, set the param
