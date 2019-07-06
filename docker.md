@@ -33,3 +33,6 @@ grant all privileges on *.* to 'root'@'172.17.0.1' identified by 'xxx';
 or grant all privileges on *.* to 'root'@'%';  # check which one fits ur mysql version
 
 FLUSH PRIVILEGES;
+
+
+docker exec -i container_name mysql -uroot dbname < data.sql;  # import data into a schema
