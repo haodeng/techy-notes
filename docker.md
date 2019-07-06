@@ -28,9 +28,7 @@ docker exec -it mysql-server-5.6.44 mysql -uroot -p  # get the temp pass by : do
 
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('password');  # mysql 5.6 version, new versions use alter user
 
-grant all privileges on *.* to 'root'@'172.17.0.1' identified by 'xxx';
-
-or grant all privileges on *.* to 'root'@'%';  # check which one fits ur mysql version
+grant all privileges on *.* to 'root'@'172.17.0.1' identified by 'password';
 
 FLUSH PRIVILEGES;
 
