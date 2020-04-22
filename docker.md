@@ -38,3 +38,17 @@ docker exec -i container_name mysql -uroot dbname < data.sql;  # import data int
 docker exec -i mysql-server-4 mysql --max_allowed_packet=800M -uroot -proot  test<test.sql  # define the max size of import sql file.
 
 set global max_allowed_packet=1000000000; # also in mysql, set the param
+
+
+Edit file in docker container:
+docker exec -it <instance name> bash
+  
+then in container run: apt-get update
+apt-get install vim
+
+
+Edit file in a stopped docker container:
+docker cp docker_web_1:/etc/apache2/sites-enabled/apache2.conf .
+(correct the file)
+
+docker cp apache.conf docker_web_1:/etc/apache2/sites-enabled/apache2.conf
