@@ -18,3 +18,6 @@ rabbitmq-plugins enable rabbitmq_web_stomp
 
 # Start, stop
 rabbitmqctl start|stop|restart
+
+# Check status
+rabbitmqctl status
