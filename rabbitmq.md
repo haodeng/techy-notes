@@ -12,3 +12,9 @@ rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 rabbitmqctl add_vhost test_vhost
 
 rabbitmqctl set_permissions -p test_vhost test ".*" ".*" ".*"
+
+# Enable a plugin
+rabbitmq-plugins enable rabbitmq_web_stomp
+
+# Start, stop
+rabbitmqctl start|stop|restart
