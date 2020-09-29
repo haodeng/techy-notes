@@ -158,3 +158,14 @@ view remote repository.
 git push origin master
 
 push local change to remote repository (origin) master branch.
+
+# Change Config
+
+git config --global user.email "test@example.com" # change global user.email, for all repositories
+
+git config user.email "test@example.com"  # change current repositoy user.email
+
+git config --list. # show all configs
+if u see two user.email by git config --list|grep user.email, that's fine, one for global setting, another is for local repository
+
+
