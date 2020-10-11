@@ -7,8 +7,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.ValueRange;
 
 /**
  * LocalDate is mainly used when timezone are not required to be explicitly specified in the context
@@ -44,6 +46,17 @@ public class LocalDateDemo {
     }
 
     @Test
+    public void withChronoField()
+    {
+        LocalDate date = LocalDate.parse("2020-10-12");
+
+        LocalDate secondDayOfMonth = date.withDayOfMonth(2);
+        Assert.assertEquals("2020-10-02", secondDayOfMonth.toString());
+        secondDayOfMonth = date.with(ChronoField.DAY_OF_MONTH, 2);
+        Assert.assertEquals("2020-10-02", secondDayOfMonth.toString());
+    }
+
+    @Test
     public void plusAndMinus()
     {
         LocalDate date = LocalDate.parse("2020-10-12");
@@ -75,6 +88,19 @@ public class LocalDateDemo {
     }
 
     @Test
+    public void getChronoField()
+    {
+        LocalDate date = LocalDate.parse("2020-10-12");
+        DayOfWeek monday = date.getDayOfWeek();
+        Assert.assertEquals(DayOfWeek.MONDAY, monday);
+        Assert.assertEquals(1, date.get(ChronoField.DAY_OF_WEEK));
+
+        int dayOfMonth = date.getDayOfMonth();
+        Assert.assertEquals(12, dayOfMonth);
+        Assert.assertEquals(12, date.get(ChronoField.DAY_OF_MONTH));
+    }
+
+    @Test
     public void withTemporalAdjusters()
     {
         LocalDate date = LocalDate.parse("2020-10-12");
@@ -89,15 +115,21 @@ public class LocalDateDemo {
     }
 
     @Test
-    public void otherUtilityMethods()
+    public void ranges()
     {
         LocalDate date = LocalDate.parse("2020-10-12");
 
-        DayOfWeek monday = date.getDayOfWeek();
-        Assert.assertEquals(DayOfWeek.MONDAY, monday);
+        ValueRange yearRange = date.range(ChronoField.DAY_OF_YEAR);
+        Assert.assertEquals("1 - 366", yearRange.toString());
 
-        int dayOfMonth = date.getDayOfMonth();
-        Assert.assertEquals(12, dayOfMonth);
+        ValueRange monthRange = date.range(ChronoField.DAY_OF_MONTH);
+        Assert.assertEquals("1 - 31", monthRange.toString());
+    }
+
+    @Test
+    public void otherUtilityMethods()
+    {
+        LocalDate date = LocalDate.parse("2020-10-12");
 
         Assert.assertTrue(date.isLeapYear());
         Assert.assertFalse(LocalDate.parse("2021-10-11").isLeapYear());
@@ -106,5 +138,8 @@ public class LocalDateDemo {
         //     * midnight, 00:00, at the start of this date.
         LocalDateTime beginningOfDay = date.atStartOfDay();
         Assert.assertEquals("2020-10-12T00:00", beginningOfDay.toString());
+
+        Assert.assertEquals(31, date.lengthOfMonth());
+        Assert.assertEquals(366, date.lengthOfYear());
     }
 }
