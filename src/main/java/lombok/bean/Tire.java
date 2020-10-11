@@ -1,4 +1,4 @@
-package bean;
+package lombok.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

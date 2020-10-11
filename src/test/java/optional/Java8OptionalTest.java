@@ -1,8 +1,8 @@
 package optional;
 
-import bean.Car;
-import bean.Tire;
-import bean.Wheel;
+import lombok.bean.Car;
+import lombok.bean.Tire;
+import lombok.bean.Wheel;
 import org.junit.Assert;
 import org.junit.Test;
 

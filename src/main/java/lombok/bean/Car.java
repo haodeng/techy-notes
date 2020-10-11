@@ -1,4 +1,4 @@
-package bean;
+package lombok.bean;
 
 import lombok.Getter;
 import lombok.Setter;
