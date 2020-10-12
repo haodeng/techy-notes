@@ -3,10 +3,7 @@ package java8datetime;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
@@ -136,11 +133,23 @@ public class LocalDateDemo {
 
         dateTime = date.atTime(20,  10, 5);
         Assert.assertEquals("2020-10-12T20:10:05", dateTime.toString());
+    }
+
+    @Test
+    public void atStartOfDay()
+    {
+        LocalDate date = LocalDate.parse("2020-10-12");
 
         //This returns a LocalDateTime formed from this date at the time of
         //     * midnight, 00:00, at the start of this date.
         LocalDateTime beginningOfDay = date.atStartOfDay();
         Assert.assertEquals("2020-10-12T00:00", beginningOfDay.toString());
+
+        ZonedDateTime zonedDateTime = date.atStartOfDay(ZoneId.of("UTC"));
+        Assert.assertEquals("2020-10-12T00:00Z[UTC]", zonedDateTime.toString());
+
+        zonedDateTime = date.atStartOfDay(ZoneId.of("America/New_York"));
+        Assert.assertEquals("2020-10-12T00:00-04:00[America/New_York]", zonedDateTime.toString());
     }
 
     @Test
