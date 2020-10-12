@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
@@ -127,17 +128,28 @@ public class LocalDateDemo {
     }
 
     @Test
+    public void toLocalDateTime()
+    {
+        LocalDate date = LocalDate.parse("2020-10-12");
+        LocalDateTime dateTime = date.atTime(LocalTime.of(20, 10, 5));
+        Assert.assertEquals("2020-10-12T20:10:05", dateTime.toString());
+
+        dateTime = date.atTime(20,  10, 5);
+        Assert.assertEquals("2020-10-12T20:10:05", dateTime.toString());
+
+        //This returns a LocalDateTime formed from this date at the time of
+        //     * midnight, 00:00, at the start of this date.
+        LocalDateTime beginningOfDay = date.atStartOfDay();
+        Assert.assertEquals("2020-10-12T00:00", beginningOfDay.toString());
+    }
+
+    @Test
     public void otherUtilityMethods()
     {
         LocalDate date = LocalDate.parse("2020-10-12");
 
         Assert.assertTrue(date.isLeapYear());
         Assert.assertFalse(LocalDate.parse("2021-10-11").isLeapYear());
-
-        //This returns a LocalDateTime formed from this date at the time of
-        //     * midnight, 00:00, at the start of this date.
-        LocalDateTime beginningOfDay = date.atStartOfDay();
-        Assert.assertEquals("2020-10-12T00:00", beginningOfDay.toString());
 
         Assert.assertEquals(31, date.lengthOfMonth());
         Assert.assertEquals(366, date.lengthOfYear());
