@@ -3,11 +3,13 @@ package java8datetime;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAmount;
 
 public class LocalTimeDemo {
     @Test
