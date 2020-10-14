@@ -3,7 +3,6 @@ package java8datetime;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
