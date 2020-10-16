@@ -1,4 +1,4 @@
-package java8datetime;
+package java8.datetime;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class OffsetDateTimeDemo {
     public void createOffsetDateTime()
     {
         ZoneOffset offset = ZoneOffset.of("+02:00");
-        //add offset to local datetime
+        //add offset to local java8.datetime
         OffsetDateTime offsetDateTime = OffsetDateTime.of(LocalDateTime.parse("2020-10-20T09:30:20"), offset);
         Assert.assertEquals("2020-10-20T09:30:20+02:00", offsetDateTime.toString());
 

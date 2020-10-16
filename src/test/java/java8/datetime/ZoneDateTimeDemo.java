@@ -1,4 +1,4 @@
-package java8datetime;
+package java8.datetime;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class ZoneDateTimeDemo {
     public void createZonedDateTime()
     {
         ZoneId zoneId = ZoneId.of("America/Vancouver");
-        //Add zone to local datetime
+        //Add zone to local java8.datetime
         ZonedDateTime zonedDateTime = ZonedDateTime.of(LocalDateTime.parse("2020-10-20T06:30"), zoneId);
         Assert.assertEquals("2020-10-20T06:30-07:00[America/Vancouver]", zonedDateTime.toString());
 

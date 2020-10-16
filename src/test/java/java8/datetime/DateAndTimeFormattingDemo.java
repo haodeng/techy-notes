@@ -1,4 +1,4 @@
-package java8datetime;
+package java8.datetime;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -49,7 +49,7 @@ public class DateAndTimeFormattingDemo {
                         .ofLocalizedDateTime(FormatStyle.MEDIUM)
                         .withLocale(Locale.CHINA)));
 
-        Assert.assertEquals("2020-10-20 10:30:20",
+        Assert.assertEquals("Oct 20, 2020 10:30:20 AM",
                 zonedDateTime.format(DateTimeFormatter
                         .ofLocalizedDateTime(FormatStyle.MEDIUM)
                         .withLocale(Locale.US)));

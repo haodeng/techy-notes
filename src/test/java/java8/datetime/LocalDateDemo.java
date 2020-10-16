@@ -1,4 +1,4 @@
-package java8datetime;
+package java8.datetime;
 
 import org.junit.Assert;
 import org.junit.Test;
