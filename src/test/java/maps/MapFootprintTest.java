@@ -7,10 +7,7 @@ import org.junit.Test;
 import org.openjdk.jol.info.GraphLayout;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MapFootprintTest {
     @Test
@@ -41,7 +38,6 @@ public class MapFootprintTest {
     }
 
     /**
-     * Run it manually
      * SmoothieMap has less footprint than HashMap
      */
     @Test
@@ -73,6 +69,38 @@ public class MapFootprintTest {
          *     100000        48   4800000   java.util.HashMap
          *    2000000        32  64000000   java.util.HashMap$Node
          *    6200022           179627200   (total)
+         */
+        System.out.println(GraphLayout.parseInstance(rows).toFootprint());
+    }
+
+    @Test
+    public void evaluate_TreeMap()
+    {
+        List<Map<String, Object>> rows = new ArrayList<>();
+
+        //100000 rows of TreeMap
+        for (int i = 0; i < 100000; i++)
+        {
+            Map<String, Object> map = new TreeMap<>();
+            for (int k = 0; k < 20; ++k)
+            {
+                map.put(k + "", k);
+            }
+
+            rows.add(map);
+        }
+
+        /**
+         * java.util.ArrayList@3b22cdd0d footprint:
+         *      COUNT       AVG       SUM   DESCRIPTION
+         *    2000000        24  48000000   [C
+         *          1    426856    426856   [Ljava.lang.Object;
+         *         20        16       320   java.lang.Integer
+         *    2000000        24  48000000   java.lang.String
+         *          1        24        24   java.util.ArrayList
+         *     100000        48   4800000   java.util.TreeMap
+         *    2000000        40  80000000   java.util.TreeMap$Entry
+         *    6100022           181227200   (total)
          */
         System.out.println(GraphLayout.parseInstance(rows).toFootprint());
     }
