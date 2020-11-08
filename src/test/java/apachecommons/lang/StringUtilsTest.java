@@ -29,6 +29,13 @@ public class StringUtilsTest {
         assertTrue(StringUtils.isAnyEmpty(null, ""));
         assertTrue(StringUtils.isAnyEmpty(null, "", " "));
         assertFalse(StringUtils.isAnyEmpty("A", "B", " C"));
+
+        assertTrue(StringUtils.isWhitespace(""));
+        //Space
+        assertTrue(StringUtils.isWhitespace(" "));
+        //Tab
+        assertTrue(StringUtils.isWhitespace("   "));
+        assertFalse(StringUtils.isWhitespace("a"));
     }
 
     @Test
@@ -52,5 +59,31 @@ public class StringUtilsTest {
         assertFalse(StringUtils.isMixedCase(null));
         assertFalse(StringUtils.isMixedCase("123456"));
         assertFalse(StringUtils.isMixedCase("!@#$%^&"));
+
+        assertEquals("ABCØ", StringUtils.upperCase("abcø"));
+        assertEquals("ABC", StringUtils.upperCase("ABC"));
+        assertEquals("ABC123", StringUtils.upperCase("abc123"));
+
+        assertEquals("abcø", StringUtils.lowerCase("ABCØ"));
+        assertEquals("abc", StringUtils.lowerCase("abc"));
+        assertEquals("abc123", StringUtils.lowerCase("ABC123"));
+
+        assertEquals("abcDEF", StringUtils.swapCase("ABCdef"));
+        assertEquals("abcDEF  123!@#$?", StringUtils.swapCase("ABCdef  123!@#$?"));
+    }
+
+    @Test
+    public void test_index()
+    {
+        assertEquals(-1, StringUtils.indexOf(null, "a"));
+        assertEquals(-1, StringUtils.indexOf("", "a"));
+        assertEquals(0, StringUtils.indexOf("abc", ""));
+
+        //Take the first index
+        assertEquals(0, StringUtils.indexOf("abaca", "a"));
+        assertEquals(2, StringUtils.indexOf("abaca", "ac"));
+
+        assertEquals(2, StringUtils.indexOf("abaca", "a", 1));
+        assertEquals(5, StringUtils.indexOf("abacaab", "ab", 1));
     }
 }
