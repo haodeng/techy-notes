@@ -171,6 +171,19 @@ public class StringUtilsTest {
     }
 
     @Test
+    public void test_strip()
+    {
+        //Strips whitespace from the start and end of a String.
+        // This is similar to trim but removes whitespace.
+        assertEquals("a b", StringUtils.strip(" a b  "));
+
+        //strip a
+        assertEquals("b", StringUtils.strip("aaabaaa", "a"));
+        assertEquals("baaa", StringUtils.stripStart("aaabaaa", "a"));
+        assertEquals("aaab", StringUtils.stripEnd("aaabaaa", "a"));
+    }
+
+    @Test
     public void test_pad()
     {
         assertEquals(null, StringUtils.leftPad(null, 3));
@@ -251,5 +264,37 @@ public class StringUtilsTest {
         assertEquals("cabc", StringUtils.prependIfMissing("abc", "c"));
         assertEquals("abc", StringUtils.prependIfMissing("abc", ""));
         assertEquals("abc", StringUtils.prependIfMissing("abc", null));
+    }
+
+    @Test
+    public void test_splitJoin()
+    {
+        //Splits the provided text into an array, using whitespace as the separator
+        //[a, b, c]
+        assertEquals(3, StringUtils.split("a b c").length);
+        //[a, b, c]
+        assertEquals(3, StringUtils.split("a,b,c", ",").length);
+        //[a, b, c, d]
+        assertEquals(4, StringUtils.split("a,b,c,d,e,f", ",", 4).length);
+
+        //Splits a String by Character type as returned by Groups of contiguous
+        //characters of the same type are returned as complete tokens.
+        //[abc, 123, A, b]
+        assertEquals(4, StringUtils.splitByCharacterType("abc123Ab").length);
+        //[a, ' ', b, ' ', c]
+        assertEquals(5, StringUtils.splitByCharacterType("a b c").length);
+
+        //[abc, 123, Ab]
+        assertEquals(3, StringUtils.splitByCharacterTypeCamelCase("abc123Ab").length);
+        //[abc, 123, a, B]
+        assertEquals(4, StringUtils.splitByCharacterTypeCamelCase("abc123aB").length);
+
+        //[123, 456]
+        assertEquals(2, StringUtils.splitByWholeSeparator("abc123abc456", "abc").length);
+
+        assertEquals("ab", StringUtils.join("a", "b"));
+        assertEquals("1b1.02|", StringUtils.join(1, "b", "", 1.02, '|'));
+        assertEquals("1,2,3,4", StringUtils.join(new int[]{1,2,3,4}, ','));
+        assertEquals("1|2|3|4", StringUtils.joinWith("|", 1, 2, 3, 4));
     }
 }
