@@ -219,4 +219,37 @@ public class StringUtilsTest {
 
         assertEquals(" ab ", StringUtils.center("ab", 4));
     }
+
+    @Test
+    public void test_prependAppendIfMissing()
+    {
+        //Appends the suffix to the end of the string if the string does not
+        // already end with any of the suffixes.
+        assertEquals("abc123", StringUtils.appendIfMissing("abc", "123"));
+        //already end with abc, ignore append
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "abc"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "bc"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "c"));
+        assertEquals("abca", StringUtils.appendIfMissing("abc", "a"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", null));
+
+        //With additional suffixes
+        //suffixes: Additional suffixes that are valid terminators.
+        assertEquals("abc123", StringUtils.appendIfMissing("abc", "123", "456"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "123", "abc"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "123", "bc"));
+        assertEquals("abc", StringUtils.appendIfMissing("abc", "123", "c"));
+        assertEquals("abc123", StringUtils.appendIfMissing("abc", "123", "a"));
+
+        //Prepends the prefix to the start of the string if the string does not
+        //already start with any of the prefixes.
+        assertEquals("123abc", StringUtils.prependIfMissing("abc", "123"));
+        //already start with abc, ignore prepend
+        assertEquals("abc", StringUtils.prependIfMissing("abc", "abc"));
+        assertEquals("abc", StringUtils.prependIfMissing("abc", "ab"));
+        assertEquals("abc", StringUtils.prependIfMissing("abc", "a"));
+        assertEquals("cabc", StringUtils.prependIfMissing("abc", "c"));
+        assertEquals("abc", StringUtils.prependIfMissing("abc", ""));
+        assertEquals("abc", StringUtils.prependIfMissing("abc", null));
+    }
 }
