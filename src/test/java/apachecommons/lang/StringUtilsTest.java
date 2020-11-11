@@ -181,6 +181,11 @@ public class StringUtilsTest {
         assertEquals("b", StringUtils.strip("aaabaaa", "a"));
         assertEquals("baaa", StringUtils.stripStart("aaabaaa", "a"));
         assertEquals("aaab", StringUtils.stripEnd("aaabaaa", "a"));
+
+        //Removes diacritics (~= accents) from a string. The case will not be altered.
+        //For instance, '&agrave;' will be replaced by 'a'.
+        //Note that ligatures will be left as is.
+        assertEquals("nuu", StringUtils.stripAccents("ñüú"));
     }
 
     @Test
