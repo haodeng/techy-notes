@@ -73,6 +73,8 @@ public class StringUtilsTest {
 
         assertEquals("Abc", StringUtils.capitalize("abc"));
         assertEquals("ABC", StringUtils.capitalize("aBC"));
+
+        assertEquals("aBC", StringUtils.uncapitalize("ABC"));
     }
 
     @Test
@@ -301,5 +303,66 @@ public class StringUtilsTest {
         assertEquals("1b1.02|", StringUtils.join(1, "b", "", 1.02, '|'));
         assertEquals("1,2,3,4", StringUtils.join(new int[]{1,2,3,4}, ','));
         assertEquals("1|2|3|4", StringUtils.joinWith("|", 1, 2, 3, 4));
+    }
+
+    @Test
+    public void test_chopChomp()
+    {
+        //Remove the last character from a String.
+        assertEquals("ab", StringUtils.chop("abc"));
+        assertEquals("", StringUtils.chop(""));
+        assertEquals(null, StringUtils.chop(null));
+
+        //Removes one newline from end of a String if it's there,
+        //otherwise leave it alone.
+        assertEquals("abc", StringUtils.chomp("abc"));
+        assertEquals("abc ", StringUtils.chomp("abc \r"));
+        assertEquals("abc ", StringUtils.chomp("abc \n"));
+        assertEquals("abc ", StringUtils.chomp("abc \r\n"));
+        assertEquals("abc \r\n", StringUtils.chomp("abc \r\n\r\n"));
+    }
+
+    @Test
+    public void test_getCommonPrefix()
+    {
+        //Compares all Strings in an array and returns the initial sequence of
+        //characters that is common to all of them.
+        assertEquals("a", StringUtils.getCommonPrefix("abc", "a"));
+        assertEquals("ab", StringUtils.getCommonPrefix("abc", "ab"));
+        assertEquals("abc", StringUtils.getCommonPrefix("abc", "abc"));
+        assertEquals("", StringUtils.getCommonPrefix("abc", ""));
+        assertEquals("", StringUtils.getCommonPrefix("abc", null));
+        assertEquals("", StringUtils.getCommonPrefix(null, null));
+    }
+
+    @Test
+    public void test_rotate()
+    {
+        //If {@code shift > 0}, right circular shift
+        assertEquals("abcdef", StringUtils.rotate("abcdef", 0));
+        assertEquals("fabcde", StringUtils.rotate("abcdef", 1));
+        assertEquals("efabcd", StringUtils.rotate("abcdef", 2));
+        assertEquals("defabc", StringUtils.rotate("abcdef", 3));
+        assertEquals("cdefab", StringUtils.rotate("abcdef", 4));
+        assertEquals("bcdefa", StringUtils.rotate("abcdef", 5));
+        assertEquals("abcdef", StringUtils.rotate("abcdef", 6));
+
+        //If {@code shift < 0}, left circular shift
+        assertEquals("bcdefa", StringUtils.rotate("abcdef", -1));
+    }
+
+    @Test
+    public void test_getDigits()
+    {
+        //Checks if a String {@code str} contains Unicode digits,
+        // if yes then concatenate all the digits in {@code str} and return it as a String.</p>
+        // An empty ("") String will be returned if no digits found
+        assertEquals("123", StringUtils.getDigits("123"));
+        assertEquals("12334509", StringUtils.getDigits("123-345-09"));
+        assertEquals("123", StringUtils.getDigits("123$"));
+        assertEquals("20201009", StringUtils.getDigits("2020/10/09"));
+
+        assertEquals("", StringUtils.getDigits("abc"));
+        assertEquals(null, StringUtils.getDigits(null));
     }
 }
