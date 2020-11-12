@@ -13,3 +13,4 @@ src/test/java/lombok
 git.md
 
 ### Others
+src/test
