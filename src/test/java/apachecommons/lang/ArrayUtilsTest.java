@@ -71,5 +71,23 @@ public class ArrayUtilsTest {
         assertEquals(3, copiedArray2[0]);
         assertEquals(2, copiedArray2[1]);
         assertEquals(1, copiedArray2[2]);
+
+        //{1, 2, 3}
+        int[] copiedArray3 = ArrayUtils.clone(array);
+        ArrayUtils.shift(copiedArray3, 1);
+        //{3, 1, 2}
+        assertEquals(3, copiedArray3.length);
+        assertEquals(3, copiedArray3[0]);
+        assertEquals(1, copiedArray3[1]);
+        assertEquals(2, copiedArray3[2]);
+
+        //{1, 2, 3}
+        int[] copiedArray4 = ArrayUtils.clone(array);
+        ArrayUtils.shift(copiedArray4, -1);
+        //{2, 3, 1}
+        assertEquals(3, copiedArray4.length);
+        assertEquals(2, copiedArray4[0]);
+        assertEquals(3, copiedArray4[1]);
+        assertEquals(1, copiedArray4[2]);
     }
 }
