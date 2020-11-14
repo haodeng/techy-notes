@@ -1,4 +1,4 @@
-package optional;
+package java8.optional;
 
 import lombok.bean.Car;
 import lombok.bean.Tire;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Java8OptionalTest {
+public class OptionalTest {
 
     @Test
     public void test(){
