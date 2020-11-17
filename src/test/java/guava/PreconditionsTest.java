@@ -17,5 +17,10 @@ public class PreconditionsTest {
         Assert.assertThrows(NullPointerException.class, () -> {
             Preconditions.checkNotNull(null);
         });
+
+        boolean state = false;
+        Assert.assertThrows(IllegalStateException.class, () -> {
+            Preconditions.checkState(state);
+        });
     }
 }
