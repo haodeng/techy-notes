@@ -19,6 +19,17 @@ ssh-keygen -t rsa
 </pre>
 to create a key-pair. public key can be shared. By default the key type is rsa.
 
+<pre>
+ssh-keygen -p -f /path/to/private.key
+</pre>
+-p' Requests changing the passphrase of a private key file instead of creating a new private key. The program will prompt for the file containing the private key, for the old passphrase, and twice for the new passphrase.
+
+<pre>
+ssh-add -K /path/to/private.key
+</pre>
+ssh-add is a command for adding SSH private keys into the SSH authentication agent for implementing single sign-on with SSH
+
+
 
 ## Curl
 <pre>
