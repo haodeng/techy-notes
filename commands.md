@@ -66,3 +66,10 @@ Write out the response
 curl -H "Authorization: Basic dGVzdDE6dGVzdDI=" "http://example.com/web/test/status?reference=400003A13C0671607251525040&status=delivered"
 </pre>
 Authorization
+
+## Openssl 
+<pre>
+openssl x509 -text -inform DER -in 1.cer
+openssl x509 -text -inform PEM -in 1.pem
+</pre>
+View the certificate info in text
