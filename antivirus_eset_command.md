@@ -25,6 +25,11 @@
     Total:             files - 1, objects 96652
     Detected:          files - 0, objects 0
     Cleaned:           files - 0, objects 0
-    
+
+Get exit code by errorlevel
+
+    @echo off
+    “C:\Program Files\ESET\ESET Security\ecls.exe” /files "C:\location to file" /log-file="log file location"
+    if errorlevel 0 (echo Scan pass, no thread found.) else (echo thread or error found, check the scan log for detail.)
 
 More details: https://help.eset.com/essp/14/en-US/advanced_cmd.html
