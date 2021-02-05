@@ -67,6 +67,11 @@ curl -H "Authorization: Basic dGVzdDE6dGVzdDI=" "http://example.com/web/test/sta
 </pre>
 Authorization
 
+<pre>
+curl -k https://incsure.xx.com
+</pre>
+Visit insecure urls
+
 ## Openssl 
 <pre>
 openssl x509 -text -inform DER -in 1.cer
