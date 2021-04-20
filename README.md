@@ -1,16 +1,19 @@
 
 
-### Functional Test
-src/test/java/functional
+### Techy notes
+* Git
+* Apache Bench
+* Docker
+* Mysql
+* CentOS
+* RabbitMq
+* Vim
 
-
-### Lombok -- Help writing concise code
-src/main/java/lombok/
-
-src/test/java/lombok
-
-### Git command
-git.md
-
-### Others
-src/test
+### Test code
+* Java function
+* concurrent
+* guava
+* apache commons
+* lombok
+* openjdk
+* SmoothieMap
