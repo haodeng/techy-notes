@@ -28,10 +28,34 @@ public class ThreadBlock2 {
         System.out.println("after get.");
     }
 
+    static class ThreadA implements Runnable {
+
+        @Override
+        public void run() {
+            try {
+                System.out.println("Child thread, sleep");
+                Thread.sleep(1000);
+                System.out.println("Child thread, done");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void test2() throws InterruptedException {
+        Thread thread = new Thread(new ThreadA());
+        thread.start();
+
+        // block main thread, wait child thread done.
+        thread.join();
+        System.out.println("Without join(), I'm gonna print out first");
+    }
 
     public static void main(String[] args) throws Exception {
         ThreadBlock2 threadBlock2 = new ThreadBlock2();
         threadBlock2.test();
+
+        threadBlock2.test2();
     }
 }
 

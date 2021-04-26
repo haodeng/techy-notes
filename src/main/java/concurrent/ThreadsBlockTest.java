@@ -84,6 +84,8 @@ public class ThreadsBlockTest {
     }
 
     // Better!
+    // wait release CPU and lock
+    // sleep only release CPU, do NOT release lock. May get deadlock
     @SneakyThrows
     private void blockTestWithWait(int runId) {
         synchronized (lock) {
