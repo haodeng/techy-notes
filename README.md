@@ -9,7 +9,7 @@
 * RabbitMq
 * Vim
 
-### Test code
+### Test cases
 * Java function
 * concurrent
 * guava
