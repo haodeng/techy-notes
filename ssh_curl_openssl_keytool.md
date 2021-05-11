@@ -78,3 +78,11 @@ openssl x509 -text -inform DER -in 1.cer
 openssl x509 -text -inform PEM -in 1.pem
 </pre>
 View the certificate info in text
+
+## Keytool
+The default keystore password is: changeit
+
+    keytool -import -alias name -file my.cer -keystore cacerts
+ 
+ 
+    keytool -list -keystore cacerts|grep name
