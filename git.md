@@ -169,3 +169,5 @@ git config --list. # show all configs
 if u see two user.email by git config --list|grep user.email, that's fine, one for global setting, another is for local repository
 
 
+# set tracking information 
+    git branch --set-upstream-to=origin/<branch> main
