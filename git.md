@@ -171,3 +171,8 @@ if u see two user.email by git config --list|grep user.email, that's fine, one f
 
 # set tracking information 
     git branch --set-upstream-to=origin/<branch> main
+
+# Clean Up Remote Branches in local
+With --prune, the update process simply removes any remote-tracking names that exist in your repository, but no longer correspond to a branch name in the repository at remote.
+
+    git remote update origin --prune
