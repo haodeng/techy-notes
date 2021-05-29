@@ -78,4 +78,23 @@ Every Kubernetes Node runs at least:
         kubectl exec -ti $POD_NAME -- bash
 
 # Using a Service to Expose Your App
+A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them. 
+Services enable a loose coupling between dependent Pods. 
+A Service is defined using YAML (preferred) or JSON, like all Kubernetes objects. 
+The set of Pods targeted by a Service is usually determined by a LabelSelector
 
+Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a Service. Services allow your applications to receive traffic. Services can be exposed in different ways by specifying a type in the ServiceSpec:
+
+* ClusterIP (default) - Exposes the Service on an internal IP in the cluster. This type makes the Service only reachable from within the cluster.
+* NodePort - Exposes the Service on the same port of each selected Node in the cluster using NAT. Makes a Service accessible from outside the cluster using <NodeIP>:<NodePort>. Superset of ClusterIP.
+* LoadBalancer - Creates an external load balancer in the current cloud (if supported) and assigns a fixed, external IP to the Service. Superset of NodePort.
+* ExternalName - Maps the Service to the contents of the externalName field (e.g. `foo.bar.example.com`), by returning a CNAME record with its value. No proxying of any kind is set up.
+
+## Services and Labels
+A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
+
+Services match a set of Pods using labels and selectors, a grouping primitive that allows logical operation on objects in Kubernetes. Labels are key/value pairs attached to objects and can be used in any number of ways:
+
+* Designate objects for development, test, and production
+* Embed version tags
+* Classify an object using tags
