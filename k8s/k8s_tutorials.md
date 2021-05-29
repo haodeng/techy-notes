@@ -19,6 +19,8 @@ The client version is the kubectl version; the server version is the Kubernetes 
 
     kubectl cluster-info
     kubectl get nodes
+    # use --help to get additional options
+    kubectl get nodes --help
 
 # Deploy an app
 
@@ -26,5 +28,11 @@ The client version is the kubectl version; the server version is the Kubernetes 
     
     kubectl get deployments
 
+## View the app
+
+    # run in a separate terminal, create a proxy that will forward communications into the cluster-wide, private network.
+    kubectl proxy
     
+    curl http://localhost:8001/version
+In order for the new deployment to be accessible without using the Proxy, a Service is required
     
