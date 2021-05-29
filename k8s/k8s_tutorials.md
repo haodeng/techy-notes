@@ -167,3 +167,11 @@ the name of the ReplicaSet is always formatted as [DEPLOYMENT-NAME]-[RANDOM-STRI
     kubectl describe deployments/kubernetes-bootcamp
 
 # Performing a Rolling Update
+Rolling updates allow Deployments' update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
+In Kubernetes, updates are versioned and any Deployment update can be reverted to a previous (stable) version.
+if a Deployment is exposed publicly, the Service will load-balance the traffic only to available Pods during the update. An available Pod is an instance that is available to the users of the application.
+Rolling updates allow the following actions:
+
+* Promote an application from one environment to another (via container image updates)
+* Rollback to previous versions
+* Continuous Integration and Continuous Delivery of applications with zero downtime
