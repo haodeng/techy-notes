@@ -100,5 +100,8 @@ Services match a set of Pods using labels and selectors, a grouping primitive th
 * Embed version tags
 * Classify an object using tags
 
- 
+        # a default service already there
         kubectl get services
+    
+    # create a new service and expose it to external traffic ((minikube does not support the LoadBalancer option yet)
+    kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
