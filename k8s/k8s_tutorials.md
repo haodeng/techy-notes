@@ -59,10 +59,23 @@ A Node can have multiple pods, and the Kubernetes master automatically handles s
 The Master's automatic scheduling takes into account the available resources on each Node.
 
 Every Kubernetes Node runs at least:
-
 * Kubelet, a process responsible for communication between the Kubernetes Master and the Node; it manages the Pods and the containers running on a machine.
 * A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.
 
 
-    kubectl get pods
-    
+        # look for existing Pods
+        kubectl get pods
+        
+        # details. to view what containers are inside that Pod and what images are used to build those containers 
+        kubectl describe pods
+        
+        export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+        # retrieve these app logs (Anything that the application would normally send to STDOUT)
+        kubectl logs $POD_NAME
+        
+        # execute commands directly on the container, exec command
+        kubectl exec $POD_NAME -- env
+        kubectl exec -ti $POD_NAME -- bash
+
+# Using a Service to Expose Your App
+
