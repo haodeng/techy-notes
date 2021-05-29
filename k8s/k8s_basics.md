@@ -175,3 +175,50 @@ Rolling updates allow the following actions:
 * Promote an application from one environment to another (via container image updates)
 * Rollback to previous versions
 * Continuous Integration and Continuous Delivery of applications with zero downtime
+.
+    
+    # view the current image version of the app (look at the Image field)
+    kubectl describe pods. # Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
+    
+    # update the image of the application to version 2
+    kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+The command notified the Deployment to use a different image for your app and initiated a rolling update.
+
+    # Check the status of the new Pods, and view the old one terminating
+    kubectl get pods
+
+## Verify an update
+
+    # find out the exposed IP and Port 
+    kubectl describe services/kubernetes-bootcamp
+    
+    export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')
+    # We hit a different Pod with every request and we see that all Pods are running the latest version (v2)
+    curl $(minikube ip):$NODE_PORT
+    
+    # The update can be confirmed also by running a rollout status
+    kubectl rollout status deployments/kubernetes-bootcamp
+    
+    # view the current image version of the app
+    kubectl describe pods
+
+## Rollback an update
+
+    # Let’s perform another update, and deploy image tagged as v10
+    kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=gcr.io/google-samples/kubernetes-bootcamp:v10
+    
+    # something is wrong… We do not have the desired number of Pods available.
+    kubectl get deployments
+    
+    # There is no image called v10 in the repository.
+    kubectl describe pods
+    # image "gcr.io/google-samples/kubernetes-bootcamp:v10": rpc error: code = Unknown desc = Error response from daemon: manifest for gcr.io/google-samples/kubernetes-bootcamp:v10 not found: manifest unknown: Failed to fetch "v10" from request "/v2/google-samples/kubernetes-bootcamp/manifests/v10".
+    
+    # roll back to our previously working version: v2
+    kubectl rollout undo deployments/kubernetes-bootcamp
+    
+    # Four Pods are running
+    kubectl get pods
+    
+    # the deployment is using a stable version of the app (v2). The Rollback was successful.
+    kubectl describe pods
