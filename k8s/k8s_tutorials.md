@@ -90,6 +90,7 @@ Although each Pod has a unique IP address, those IPs are not exposed outside the
 * LoadBalancer - Creates an external load balancer in the current cloud (if supported) and assigns a fixed, external IP to the Service. Superset of NodePort.
 * ExternalName - Maps the Service to the contents of the externalName field (e.g. `foo.bar.example.com`), by returning a CNAME record with its value. No proxying of any kind is set up.
 
+
 ## Services and Labels
 A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
 
@@ -98,3 +99,6 @@ Services match a set of Pods using labels and selectors, a grouping primitive th
 * Designate objects for development, test, and production
 * Embed version tags
 * Classify an object using tags
+
+ 
+        kubectl get services
