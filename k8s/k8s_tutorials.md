@@ -144,3 +144,26 @@ Services match a set of Pods using labels and selectors, a grouping primitive th
     
     # confirm that the app is still running with a curl inside the pod
     kubectl exec -ti $POD_NAME -- curl localhost:8080
+
+# Scaling an application
+Scaling is accomplished by changing the number of replicas in a Deployment
+Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling will increase the number of Pods to the new desired state. 
+Services have an integrated load-balancer that will distribute network traffic to all Pods of an exposed Deployment. Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
+
+    # To see the ReplicaSet created by the Deployment
+    kubectl get rs
+the name of the ReplicaSet is always formatted as [DEPLOYMENT-NAME]-[RANDOM-STRING]
+
+    # scale the Deployment to 4 replicas.
+    kubectl scale deployments/kubernetes-bootcamp --replicas=4
+    
+    # check. we have 4 instances of the application available
+    kubectl get deployments
+    
+    # There are 4 Pods now, with different IP addresses.
+    kubectl get pods -o wide
+    
+    # The change was registered in the Deployment events log. 
+    kubectl describe deployments/kubernetes-bootcamp
+
+# Performing a Rolling Update
