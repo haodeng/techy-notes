@@ -63,19 +63,19 @@ Every Kubernetes Node runs at least:
 * A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.
 .
 
-    # look for existing Pods
-    kubectl get pods
+        # look for existing Pods
+        kubectl get pods
         
-    # details. to view what containers are inside that Pod and what images are used to build those containers 
-    kubectl describe pods
+        # details. to view what containers are inside that Pod and what images are used to build those containers 
+        kubectl describe pods
         
-    export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
-    # retrieve these app logs (Anything that the application would normally send to STDOUT)
-    kubectl logs $POD_NAME
+        export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+        # retrieve these app logs (Anything that the application would normally send to STDOUT)
+        kubectl logs $POD_NAME
         
-    # execute commands directly on the container, exec command
-    kubectl exec $POD_NAME -- env
-    kubectl exec -ti $POD_NAME -- bash
+        # execute commands directly on the container, exec command
+        kubectl exec $POD_NAME -- env
+        kubectl exec -ti $POD_NAME -- bash
 
 
 # Using a Service to Expose Your App
@@ -99,19 +99,19 @@ Services match a set of Pods using labels and selectors, a grouping primitive th
 * Designate objects for development, test, and production
 * Embed version tags
 * Classify an object using tags
-.
+...
+
+        # a default service already there
+        kubectl get services
     
-    # a default service already there
-    kubectl get services
+        # create a new service and expose it to external traffic ((minikube does not support the LoadBalancer option yet)
+        kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
     
-    # create a new service and expose it to external traffic ((minikube does not support the LoadBalancer option yet)
-    kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
+        # To find out what port was opened externally (by the NodePort option) 
+        kubectl describe services/kubernetes-bootcamp
     
-    # To find out what port was opened externally (by the NodePort option) 
-    kubectl describe services/kubernetes-bootcamp
-    
-    export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')
-    curl $(minikube ip):$NODE_PORT
+        export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')
+        curl $(minikube ip):$NODE_PORT
 
 ## Using labels
 
