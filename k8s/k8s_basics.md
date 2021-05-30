@@ -177,15 +177,15 @@ Rolling updates allow the following actions:
 * Continuous Integration and Continuous Delivery of applications with zero downtime
 .
     
-    # view the current image version of the app (look at the Image field)
-    kubectl describe pods. # Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
+        # view the current image version of the app (look at the Image field)
+        kubectl describe pods. # Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
     
-    # update the image of the application to version 2
-    kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+        # update the image of the application to version 2
+        kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
 The command notified the Deployment to use a different image for your app and initiated a rolling update.
 
-    # Check the status of the new Pods, and view the old one terminating
-    kubectl get pods
+        # Check the status of the new Pods, and view the old one terminating
+        kubectl get pods
 
 ## Verify an update
 
