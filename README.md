@@ -4,6 +4,7 @@
 * Git
 * Apache Bench
 * Docker
+* K8s
 * Mysql
 * CentOS
 * RabbitMq
