@@ -1,4 +1,5 @@
 # Basic
+
     # pull mysql-server tag 5.6.44
     docker pull mysql/mysql-server:5.6.44  
 
@@ -53,7 +54,7 @@
     docker exec -it <instance name> bash
     # then in container run: apt-get update
     apt-get install vim
-
+---
 
     # Edit file in a stopped docker container:
     docker cp apache.conf docker_web_1:/etc/apache2/sites-enabled/apache2.conf
