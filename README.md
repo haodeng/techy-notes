@@ -9,6 +9,7 @@
 * CentOS
 * RabbitMq
 * Vim
+* sdkman
 
 ### Test cases
 * Java function
