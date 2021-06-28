@@ -36,3 +36,12 @@ Find EXTERNAL-IP:
 
     curl http://EXTERNAL-IP:8080/posts
   
+
+Cleanup
+
+    kubectl delete service deploy-demo
+    kubectl delete deployment deploy-demo
+    
+Stop
+
+    minikube stop
