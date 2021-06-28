@@ -36,7 +36,17 @@ Find EXTERNAL-IP:
 
     curl http://EXTERNAL-IP:8080/posts
   
+Scale up & down
 
+    kubectl scale deployments.apps/deploy-demo --replicas=4
+    kubectl get pods -o wide
+    
+    kubectl scale deployments.apps/deploy-demo --replicas=2
+    kubectl get pods -o wide
+    
+    # To stop a pod
+    kubectl scale deployments.apps/deploy-demo --replicas=0
+    
 Cleanup
 
     kubectl delete service deploy-demo
