@@ -1,7 +1,9 @@
 package maps;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,19 +27,19 @@ public class NullableKeyValues {
         hashMap.put(null, null);
         hashMap.put("key", null);
 
-        Assert.assertNull(hashMap.get(null));
-        Assert.assertNull(hashMap.get("key"));
+        Assertions.assertNull(hashMap.get(null));
+        Assertions.assertNull(hashMap.get("key"));
     }
 
     @Test
     public void concurrentHashMap()
     {
         Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();
-        Assert.assertThrows(NullPointerException.class, () -> {
+        Assertions.assertThrows(NullPointerException.class, () -> {
             concurrentHashMap.put(null, null);
         });
 
-        Assert.assertThrows(NullPointerException.class, () -> {
+        Assertions.assertThrows(NullPointerException.class, () -> {
             concurrentHashMap.put("key", null);
         });
     }
@@ -46,11 +48,11 @@ public class NullableKeyValues {
     public void treeMap()
     {
         Map<String, String> treeMap = new TreeMap<>();
-        Assert.assertThrows(NullPointerException.class, () -> {
+        Assertions.assertThrows(NullPointerException.class, () -> {
             treeMap.put(null, null);
         });
 
         treeMap.put("key", null);
-        Assert.assertNull(treeMap.get("key"));
+        Assertions.assertNull(treeMap.get("key"));
     }
 }

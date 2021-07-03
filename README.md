@@ -19,3 +19,4 @@
 * lombok
 * openjdk
 * SmoothieMap
+* Java 8, 9

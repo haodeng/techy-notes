@@ -1,8 +1,9 @@
 package guava;
 
 import com.google.common.base.Preconditions;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 public class PreconditionsTest {
 
@@ -10,16 +11,16 @@ public class PreconditionsTest {
     public void test()
     {
         int i = -1;
-        Assert.assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             Preconditions.checkArgument(i >= 0, "Argument was %s but expected nonnegative", i);
         });
 
-        Assert.assertThrows(NullPointerException.class, () -> {
+        Assertions.assertThrows(NullPointerException.class, () -> {
             Preconditions.checkNotNull(null);
         });
 
         boolean state = false;
-        Assert.assertThrows(IllegalStateException.class, () -> {
+        Assertions.assertThrows(IllegalStateException.class, () -> {
             Preconditions.checkState(state);
         });
     }
