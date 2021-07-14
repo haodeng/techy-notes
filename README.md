@@ -20,3 +20,6 @@
 * openjdk
 * SmoothieMap
 * Java 8, 9, 10, 11
+
+### Other resources
+* Best practices for writing code comments: https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
