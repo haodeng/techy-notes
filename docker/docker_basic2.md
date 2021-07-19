@@ -36,7 +36,14 @@ Terminate running container
     # Attaching to running container
     docker run -d -it --name counter1 loodse/counter
     docker attach counter1
+    
+## Delete by force (--force)
 
+    docker image rm 33bd5a1580e6
+    Error response from daemon: conflict: unable to delete 33bd5a1580e6 (must be forced) - image is being used by stopped container 84764cd3af0c
+    docker image rm --force 33bd5a1580e6
+    
+    
 # Managing logs
   
     # check log
