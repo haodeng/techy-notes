@@ -14,3 +14,11 @@ install chart
 uniinstall
 
     helm uninstall prometheus
+    
+
+grafana UI
+
+    kubectl port-forward service/prometheus-grafana 3000:80
+    
+    http://localhost:3000/login
+    admin/prom-operator
