@@ -10,3 +10,7 @@ add repos
 install chart
 
     helm install prometheus prometheus-community/kube-prometheus-stack
+
+uniinstall
+
+    helm uninstall prometheus
