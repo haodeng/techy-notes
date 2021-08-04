@@ -1,6 +1,5 @@
 package concurrent;
 
-import com.ibm.jvm.trace.format.api.Message;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
