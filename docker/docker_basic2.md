@@ -9,6 +9,9 @@
     # search our desired image in registry
     docker search <image_name>
     
+    # check a container's env
+    docker exec <container_name or id> env
+    
 get details of running container
 
     docker inspect <CONTAINER ID>
