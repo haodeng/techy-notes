@@ -14,6 +14,10 @@
 # Solutions
 * 高并发下怎么做余额扣减: https://www.zhihu.com/question/61484424
 
+# Product related
+RabbitMQ Best Practice, https://www.cloudamqp.com/blog/part1-rabbitmq-best-practice.html
+RabbitMQ Java API guide, https://www.rabbitmq.com/api-guide.html
+
 # Enginnering practice tips
 * Best practices for writing code comments: https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
 * Trunk-Based Development, https://trunkbaseddevelopment.com/
