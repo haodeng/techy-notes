@@ -22,3 +22,6 @@ RabbitMQ Java API guide, https://www.rabbitmq.com/api-guide.html
 * Best practices for writing code comments: https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
 * Trunk-Based Development, https://trunkbaseddevelopment.com/, https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development
 * Sonar lint for static code analysis, https://www.sonarlint.org/
+
+# product
+* Kafka vs RabbitMq, https://freshcodeit.com/blog-introduction-to-message-brokers-part-1-apache-kafka-vs-rabbitmq?utm_campaign=SF%20Data%20Weekly&utm_medium=email&utm_source=Revue%20newsletter
