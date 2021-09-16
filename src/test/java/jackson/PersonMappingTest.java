@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -31,10 +32,11 @@ public class PersonMappingTest {
                 .dateOfBirth(LocalDate.of(2001, 9, 12))
                 .gender(Person.Gender.MALE)
                 .active(true)
+                .created(Instant.now())
                 .build();
 
         String json = objectMapper.writeValueAsString(person);
-        // {"name":"Hao","dateOfBirth":"2001-09-12","gender":"MALE","active":true}
+        // {"name":"Hao","dateOfBirth":"2001-09-12","gender":"MALE","active":true,"created":"2021-09-16T18:53:50.860121Z"}
         System.out.println(json);
     }
 

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Builder
@@ -16,6 +17,7 @@ public class Person {
     private LocalDate dateOfBirth;
     private Gender gender;
     private boolean active = true;
+    private Instant created;
 
     enum Gender {
         MALE, FEMALE;
