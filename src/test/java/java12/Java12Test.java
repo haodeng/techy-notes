@@ -94,4 +94,31 @@ public class Java12Test {
         // Deng
         System.out.println(text.indent(1));
     }
+    
+    enum TopThreeFamilyName { LEE, WONG, SUN}
+    enum Day{NONE, SAT, SUN, MON, TUS, WED, THU, FRI}
+    @Test
+    public void newSwitch() {
+        TopThreeFamilyName familyName = TopThreeFamilyName.LEE;
+        boolean nameShouldBeLee = false;
+        switch (familyName) {
+            case LEE -> {
+                System.out.println("This is a block");
+                System.out.println("Lee");
+                nameShouldBeLee = true;
+            }
+            case WONG -> System.out.println("Wong");
+            case SUN -> System.out.println("Sun");
+            default -> throw new IllegalStateException("Unexpected value: " + familyName);
+        }
+        Assertions.assertTrue(nameShouldBeLee);
+
+        Day day = Day.SAT;
+        var today = switch(day){
+            case SAT, SUN -> "Weekend day";
+            case MON, TUS, WED, THU, FRI ->  "Working day";
+            default -> throw new IllegalArgumentException("Invalid day: " + day.name());
+        };
+        Assertions.assertEquals("Weekend day", today);
+    }
 }
