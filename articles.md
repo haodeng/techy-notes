@@ -1,5 +1,6 @@
 # Software design
 * Power Use of Value Objects in DDD: https://www.infoq.com/presentations/Value-Objects-Dan-Bergh-Johnsson/, https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/DanBerghJohnsson_ThePowerOfValuePowerUseOfValueObjectsInDomainDrivenDesign.pdf
+* The 12 factors app: https://12factor.net/
 
 # Distributed system design
 * Clound design patterns: https://docs.microsoft.com/en-us/azure/architecture/patterns/
