@@ -12,9 +12,18 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class OptionalTest {
+    @Test
+    public void testOfNull() {
+        Car car = null;
+        String carName = Optional.ofNullable(car)
+                .map(myCar -> myCar.toString())
+                .orElseGet(() -> newCar().toString());
+
+        Assert.assertNotNull(carName);
+    }
 
     @Test
-    public void test(){
+    public void test() {
         Car car = newCar();
 
         List<String> s = car.getWheels().stream()
@@ -42,7 +51,7 @@ public class OptionalTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         Car car = newCar2();
 
         Assert.assertFalse(car.getWheels().get(2).get().getTire().isPresent());
@@ -61,7 +70,7 @@ public class OptionalTest {
         Assert.assertEquals("Tire of spare wheel", tires.get(3).getIdentifier());
     }
 
-    private Car newCar(){
+    private Car newCar() {
         Car car = new Car();
         List<Optional<Wheel>> wheels = new ArrayList<>();
 
@@ -85,7 +94,7 @@ public class OptionalTest {
         return car;
     }
 
-    private Car newCar2(){
+    private Car newCar2() {
         Car car = new Car();
         List<Optional<Wheel>> wheels = new ArrayList<>();
 
@@ -109,14 +118,14 @@ public class OptionalTest {
         return car;
     }
 
-    private Wheel spareWheel(){
+    private Wheel spareWheel() {
         Wheel wheel = new Wheel();
         wheel.setTire(Optional.of(new Tire("Tire of spare wheel")));
 
         return wheel;
     }
 
-    private Tire spareTire(){
+    private Tire spareTire() {
         return new Tire("Spare Tire");
     }
 
