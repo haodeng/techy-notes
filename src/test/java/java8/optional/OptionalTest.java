@@ -22,6 +22,12 @@ public class OptionalTest {
         Assert.assertNotNull(carName);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testOf() {
+        Car car = null;
+        Optional.of(car);
+    }
+
     @Test
     public void test() {
         Car car = newCar();
