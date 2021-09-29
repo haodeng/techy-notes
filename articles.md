@@ -25,5 +25,6 @@
 * Trunk-Based Development, https://trunkbaseddevelopment.com/, https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development, https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development
 * Compring different git workflows: https://www.atlassian.com/git/tutorials/comparing-workflows
 * Sonar lint for static code analysis, https://www.sonarlint.org/
+* Google Java Style: https://google.github.io/styleguide/javaguide.html
 
 
