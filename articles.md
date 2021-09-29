@@ -16,13 +16,15 @@
 * 高并发下怎么做余额扣减: https://www.zhihu.com/question/61484424
 
 # Product related
-RabbitMQ Best Practice, https://www.cloudamqp.com/blog/part1-rabbitmq-best-practice.html
-RabbitMQ Java API guide, https://www.rabbitmq.com/api-guide.html
+* RabbitMQ Best Practice, https://www.cloudamqp.com/blog/part1-rabbitmq-best-practice.html
+* RabbitMQ Java API guide, https://www.rabbitmq.com/api-guide.html
+* Kafka vs RabbitMq, https://freshcodeit.com/blog-introduction-to-message-brokers-part-1-apache-kafka-vs-rabbitmq?utm_campaign=SF%20Data%20Weekly&utm_medium=email&utm_source=Revue%20newsletter
 
 # Enginnering practice tips
 * Best practices for writing code comments: https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
-* Trunk-Based Development, https://trunkbaseddevelopment.com/, https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development
+* Trunk-Based Development, https://trunkbaseddevelopment.com/, https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development, https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development
+* Compring different git workflows: https://www.atlassian.com/git/tutorials/comparing-workflows
 * Sonar lint for static code analysis, https://www.sonarlint.org/
+* Google Java Style: https://google.github.io/styleguide/javaguide.html
 
-# product
-* Kafka vs RabbitMq, https://freshcodeit.com/blog-introduction-to-message-brokers-part-1-apache-kafka-vs-rabbitmq?utm_campaign=SF%20Data%20Weekly&utm_medium=email&utm_source=Revue%20newsletter
+
