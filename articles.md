@@ -11,6 +11,7 @@
   * https://blog.51cto.com/u_15265637/2898524
   * https://zq99299.github.io/note-book/cache-pdp/037.html#%E8%AE%B2%E5%B8%88%E6%97%81%E7%99%BD
 * Best practices in cloud applications, https://docs.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices
+* Choosing an OAuth 2.0 flow, https://developer.okta.com/docs/concepts/oauth-openid/#choosing-an-oauth-2-0-flow
 
 # Solutions
 * 高并发下怎么做余额扣减: https://www.zhihu.com/question/61484424
