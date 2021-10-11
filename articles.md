@@ -20,7 +20,7 @@
 * RabbitMQ Best Practice, https://www.cloudamqp.com/blog/part1-rabbitmq-best-practice.html
 * RabbitMQ Java API guide, https://www.rabbitmq.com/api-guide.html
 * Kafka vs RabbitMq, https://freshcodeit.com/blog-introduction-to-message-brokers-part-1-apache-kafka-vs-rabbitmq?utm_campaign=SF%20Data%20Weekly&utm_medium=email&utm_source=Revue%20newsletter
-* scalable workflow engine https://blog.bernd-ruecker.com/zeebe-io-a-horizontally-scalable-distributed-workflow-engine-45788a90d549
+* scalable workflow engine:https://airflow.apache.org/docs/apache-airflow/stable/index.html,  https://blog.bernd-ruecker.com/zeebe-io-a-horizontally-scalable-distributed-workflow-engine-45788a90d549
 
 # Enginnering practice tips
 * Best practices for writing code comments: https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
