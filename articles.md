@@ -30,4 +30,7 @@
 * Google Java Style: https://google.github.io/styleguide/javaguide.html
 * Rest naming convention: https://restfulapi.net/resource-naming/
 
+# DevOps
+GitOps: https://about.gitlab.com/topics/gitops/
+
 
