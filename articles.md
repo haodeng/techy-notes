@@ -33,4 +33,5 @@
 # DevOps
 GitOps: https://about.gitlab.com/topics/gitops/
 
-
+# Others
+PKCE: https://dropbox.tech/developers/pkce--what-and-why-
