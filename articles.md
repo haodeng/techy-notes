@@ -31,7 +31,8 @@
 * Rest naming convention: https://restfulapi.net/resource-naming/
 
 # DevOps
-GitOps: https://about.gitlab.com/topics/gitops/
+* GitOps: https://about.gitlab.com/topics/gitops/
 
 # Others
-PKCE: https://dropbox.tech/developers/pkce--what-and-why-
+* PKCE: https://dropbox.tech/developers/pkce--what-and-why-
+* Web Application Security Testing, https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/
