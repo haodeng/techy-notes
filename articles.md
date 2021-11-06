@@ -38,3 +38,4 @@
 # Others
 * PKCE: https://dropbox.tech/developers/pkce--what-and-why-
 * Web Application Security Testing, https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/
+* An ex-Googler Technologies Guide – https://github.com/jhuangtw/xg2xg
