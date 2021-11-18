@@ -176,3 +176,36 @@ if u see two user.email by git config --list|grep user.email, that's fine, one f
 With --prune, the update process simply removes any remote-tracking names that exist in your repository, but no longer correspond to a branch name in the repository at remote.
 
     git remote update origin --prune
+
+# Tag
+Tag is used to mark the release point.
+
+    # list all tags
+    git tag
+    
+    # list tags start with 2021.
+    git tag -l "2021.*"
+    
+    # create a lightweighted tag
+    git tag tag_name
+    
+    # show the latest tag details
+    git tag
+    
+    # show a tag details
+    git tag tag_name
+    
+    # tag a commit
+    git tag -a tag_name commit_checksum. # example: git tag -a my_tag_1.1 9fceb02
+    
+    # push a tag
+    git push tag_nme
+    
+    # push all tags
+    git push --tags
+    
+    # Delete a tag locally, this won't delete a tag from a remote server
+    git tag -d tag_name
+    
+    # Delete a tag from remote server
+    git push origin --delete tag_name
