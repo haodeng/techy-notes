@@ -11,7 +11,7 @@
     # build image before init the container from there
     docker-compose up --build
     
-    # check what is running
+    # check what is running, only shows containers defined in compose file
     docker-compose ps
     docker-compose -f your_compose_file.yml ps
     
