@@ -34,6 +34,7 @@
 * Google Java Style: https://google.github.io/styleguide/javaguide.html
 * Rest naming convention: https://restfulapi.net/resource-naming/
 * Thoughts On Monorepo: https://shekhargulati.com/2020/11/02/my-thoughts-on-monorepo/
+* Multi modules project version management: http://www.mojohaus.org/versions-maven-plugin/index.html
 
 # DevOps
 * GitOps: https://about.gitlab.com/topics/gitops/
