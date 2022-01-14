@@ -1,3 +1,5 @@
 Command
 
-    KEY pattern
+    KEYS pattern
+    
+    Example:  KEYS myKey:test*
