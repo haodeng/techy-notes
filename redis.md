@@ -11,6 +11,9 @@ Command
     # check ttl of a key, -2: key not exist, -1: the key exists but has no associated expire
     TTL key
     
+    # delete by key
+    DEL key
+    
     
     
 Install redis-cli only
