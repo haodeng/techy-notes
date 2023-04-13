@@ -18,5 +18,12 @@
     # stop
     docker-compose stop
     
+    # Down
+    docker compose -d fiename.yml down  # stop and remove the container. Stop only stops the running instance
+    
     # remove containers, Pass --volumes to also remove the data volume used by containers
     docker-compose down --volumes
+
+
+    # new version of compose
+    docker compose .... ....
