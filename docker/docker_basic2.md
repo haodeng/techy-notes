@@ -68,3 +68,10 @@ Terminate running container
     
     docker inspect --format '{{ .HostConfig.LogConfig }}' redis-none
     {none map[]}
+
+# Clean up
+    # Remove all unused containers, networks, images.
+    docker system prune
+    
+    # remove all unused images not just dangling ones
+    docker system prune -a
